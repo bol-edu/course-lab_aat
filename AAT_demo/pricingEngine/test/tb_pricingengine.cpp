@@ -106,11 +106,11 @@ int main()
     regControl.capture = 0x00000000;
 
     // strategy select (per symbol)
-    regStrategies[0].select = STRATEGY_PEG;
-    regStrategies[0].enable = 0xff;
+    //regStrategies[0].select = STRATEGY_PEG;
+    //regStrategies[0].enable = 0xff;
 
     // strategy select (global override)
-    regControl.strategy = 0x80000002;
+    regControl.strategy = 0x80000001;
 
     // kernel call to process operations
     while(!responseStreamPackFIFO.empty())
