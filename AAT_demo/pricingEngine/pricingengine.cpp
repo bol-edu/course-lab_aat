@@ -196,13 +196,13 @@ bool PricingEngine::pricingStrategyLimit(ap_uint<8> thresholdEnable,
     {
         if(cache[symbolIndex].bidPrice != response.bidPrice.range(31,0))
         {
-            // create an order, current best bid +50
-            operation.timestamp = response.timestamp;
-            operation.opCode = ORDERENTRY_ADD;
-            operation.symbolIndex = symbolIndex;
-            operation.quantity = 800;
-            operation.price = (response.bidPrice.range(31,0)+50);
-            operation.direction = ORDER_BID;
+            // create an order, current best ask - 50
+            operation.timestamp = 0;
+            operation.opCode = 0;
+            operation.symbolIndex = 0;
+            operation.quantity = 0;
+            operation.price = 0;
+            operation.direction = 0;
             executeOrder = true;
         }
     }
