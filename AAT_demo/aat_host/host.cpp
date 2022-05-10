@@ -144,10 +144,8 @@ int main(int argc, char** argv) {
 	pricingEngineTop.write_register(0x010, 0x12345678);
 	pricingEngineTop.write_register(0x018, 0xdeadbeef);
 	pricingEngineTop.write_register(0x020, 0x00000000);
-	pricingEngineTop.write_register(0x028, 0x80000002);	//[31] Enable global strategy override for allsymbols; [7:0] Global strategy select for all symbols
-    // strategy select (per symbol)
-	pricingEngineTop.write_register(0x1000, 1);		// PE_SYMBOL_STRATEGY_SELECT
-	pricingEngineTop.write_register(0x1004, 0xff);	// PE_SYMBOL_STRATEGY_ENABLE
+	//[31] Enable global strategy override for allsymbols; [7:0] Global strategy select for all symbols
+	pricingEngineTop.write_register(0x028, 0x80000001);	
 
 	//input data map
     auto buffer_input = xrt::bo(device, sizeof(ap_uint<64>) * input_size, mem_read.group_id(0));
