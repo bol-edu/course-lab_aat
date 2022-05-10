@@ -6,7 +6,7 @@ The Accelerated Algorithmic Trading Platform (AAT) is an integrated hardware and
 In this lab, you will run the Accelerated Algorithmic Trading platform provided by Xilinx, and learn about the algorithmic trading process from receiving packets to sending orders, as well as the design of the entire system.
 
 # How to build & run
-build  
+build hw & host program
  
     $ cd AAT_demo/build/
     $ ./buildall.sh
@@ -14,6 +14,16 @@ build
 run 
 
     $ ./run.sh
+
+compile host program only  
+
+    $ cd AAT_demo/aat_host/
+    $ make host
+
+if you want to run C simulation with a specific kernel 
+
+    $ cd AAT_demo/pricingEngine/test/
+    $ make
 
 # Others
 If you cannot run *.sh  
@@ -25,7 +35,6 @@ You may need to reset the FPGA before running Host program
     $ xbutil reset --device
 
 ## Using devtoolset-9 bash to avoid compilation problems  
-If you use workstation, enter the following command, before running build & run shell.
 
     $ scl enable devtoolset-9 bash
 
